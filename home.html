@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1MDM - Seller</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand: #0d6efd;
+        --muted: #6c757d;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+
+        background: #fafafa;
+        align-items: center;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+        margin: 10px 0;
+        font-weight: 700;
+      }
+
+      .hero-text p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .hero-buttons button {
+        padding: 12px 25px;
+        border-radius: 25px;
+        border: none;
+        font-size: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: #e53935;
+        color: #fff;
+      }
+
+      .btn-outline {
+        background: #fff;
+        color: #e53935;
+        border: 2px solid #e53935;
+      }
+
+      .hero-stats {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .stat {
+        margin-bottom: 25px;
+      }
+
+      .stat h2 {
+        font-size: 28px;
+        color: #e53935;
+        margin: 0;
+      }
+
+      .stat p {
+        margin: 5px 0 0;
+        font-size: 16px;
+      }
+
+      .card-light {
+        background: #fbfbfd;
+        border: 1px solid #eceff4;
+      }
+      .feature {
+        min-height: 120px;
+      }
+      .topbar {
+        background: #fff;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .logo {
+        font-weight: 700;
+        color: var(--brand);
+      }
+
+      /* The red section */
+      .red-section {
+        background-color: #b71c1c;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin: 0%;
+        height: 150px;
+        text-align: center;
+      }
+
+      .red-section h2{
+        
+        font-size: 1.6rem;
+       color:#eceff4;
+      }
+
+      
+      .footer {
+        background: #000;
+        color: white;
+        padding: 60px 40px 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 80px;
+        justify-content: space-between;
+      }
+
+      .footer-col h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-col ul li a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .footer-col ul li a:hover {
+        color: white;
+      }
+
+      .logo-col p {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .footer-logo {
+        width: 140px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        margin-top: 40px;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 18px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .red-btn {
+        background: #d63c3c;
+        color: white;
+      }
+
+      .red-outline-btn {
+        border: 2px solid #d63c3c;
+        color: white;
+      }
+
+      .red-outline-btn:hover,
+      .red-btn:hover {
+        opacity: 0.8;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .footer-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .hero {
+          padding: 100px 0;
+        }
+      }
+
+      .responsive-cell-block {
+        min-height: 75px;
+      }
+
+      .text-blk {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        line-height: 25px;
+        height: 50%;
+        width: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      .responsive-container-block {
+        min-height: 75px;
+        height: fit-content;
+        width: 100%;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        justify-content: flex-start;
+      }
+
+      .responsive-container-block.bg {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 1320px;
+        margin: 50px 0 50px 0;
+      }
+
+      .text-blk.title {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 36px;
+        line-height: 45px;
+        font-weight: 900;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin: 0 0 15px 0;
+      }
+
+      * {
+        font-family: Nunito, sans-serif;
+      }
+
+      .text-blk.desc {
+        text-align: center;
+        font-size: 18px;
+        line-height: 28px;
+        height: auto;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 50px;
+        margin-left: 0px;
+        max-width: 750px;
+      }
+
+      .responsive-container-block.blocks {
+        width: 100%;
+        min-height: 0px;
+        justify-content: space-between;
+        max-width: 1320px;
+      }
+
+      .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content {
+        width: 30%;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text-blk.info-block {
+        width: 85%;
+        height: auto;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 30px;
+        margin-right: 0px;
+        margin-bottom: 50px;
+        margin-left: 0px;
+        margin: 30px 0 30px 0;
+      }
+
+      .responsive-container-block.person {
+        width: 90%;
+        min-height: 0px;
+        height: auto;
+        margin-top: 0px;
+        margin-right: 31.25px;
+        margin-bottom: 20px;
+        margin-left: 31.25px;
+      }
+
+      .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12.icon-block {
+        width: 22%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12.text-block {
+        width: 78%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .text-blk.name {
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 900;
+        height: auto;
+        width: 100%;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+      }
+
+      .text-blk.desig {
+        line-height: 16px;
+        height: auto;
+        width: 100%;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      .profile-img {
+        width: 60px;
+        height: 60px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+
+      .responsive-container-block.big-container {
+        justify-content: center;
+        padding: 0 50px 0 50px;
+      }
+
+      @media (max-width: 1024px) {
+        .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content {
+          width: 47%;
+        }
+
+        .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content.bottom {
+          margin-top: 5%;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 25%;
+        }
+
+        .text-blk.desc {
+          width: 70%;
+        }
+
+        .responsive-container-block.person {
+          margin-top: 5%;
+          margin-right: 31.25px;
+          margin-bottom: 0px;
+          margin-left: 31.25px;
+        }
+
+        .text-blk.title {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .responsive-container-block.person {
+          margin-top: 21.9375px;
+          margin-right: 31.25px;
+          margin-bottom: 20px;
+          margin-left: 31.25px;
+        }
+
+        .text-blk.info-block {
+          margin-top: 30px;
+          margin-right: 0px;
+          margin-bottom: 25px;
+          margin-left: 0px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .responsive-container-block.person {
+          margin-top: 0px;
+          margin-right: 31.25px;
+          margin-bottom: 0px;
+          margin-left: 31.25px;
+        }
+
+        .text-blk.info-block {
+          height: 50%;
+          font-size: 17px;
+        }
+
+        .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content {
+          width: 100%;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 5%;
+          margin-left: 0px;
+        }
+
+        .text-blk.desc {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 80px;
+          margin-left: 0px;
+          width: 85%;
+          font-size: 17px;
+        }
+
+        .text-blk.title {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          font-size: 30px;
+        }
+
+        .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content.bottom {
+          width: 100%;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .responsive-container-block.blocks {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .responsive-container-block.bg {
+          flex-wrap: nowrap;
+        }
+
+        .responsive-container-block.person {
+          margin-top: 0px;
+          margin-right: 31.25px;
+          margin-bottom: 20px;
+          margin-left: 31.25px;
+        }
+
+        .text-blk.info-block {
+          margin-top: 30px;
+          margin-right: 0px;
+          margin-bottom: 30px;
+          margin-left: 0px;
+        }
+
+        .text-blk.desc {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 30px;
+          margin-left: 0px;
+        }
+
+        .text-blk.desig {
+          font-size: 15px;
+        }
+
+        .text-blk.name {
+          font-size: 17px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .responsive-cell-block.wk-desk-1.wk-tab-1.wk-mobile-1.wk-ipadp-1.content {
+          width: 100%;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 8%;
+          margin-left: 0px;
+        }
+
+        .text-blk.desc {
+          width: 90%;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .text-blk.title {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          font-size: 26px;
+        }
+
+        .text-blk.info-block {
+          margin-top: 30px;
+          margin-right: 0px;
+          margin-bottom: 50px;
+          margin-left: 0px;
+          font-size: 16px;
+          line-height: 26px;
+          margin: 30px 0 20px 0;
+        }
+
+        .text-blk.desc {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 30px;
+          margin-left: 0px;
+        }
+
+        .responsive-container-block.big-container {
+          padding: 0 30px 0 30px;
+        }
+
+        .text-blk.name {
+          font-size: 17px;
+        }
+
+        .text-blk.desig {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Topbar / Navbar -->
+    <header class="topbar">
+      <nav class="container navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand logo" href="#">1MDM</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sell">Sell on 1MDM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary ms-3" href="#">Sign in</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p>Sell on 1mdm.com</p>
+        <h1>Reach millions of B2B buyers globally</h1>
+        <div class="hero-buttons">
+          <button class="btn-primary">Start selling</button>
+          <button class="btn-outline">Chat with consultant</button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <h2>26,000,000</h2>
+          <p>active buyers globally</p>
+        </div>
+        <div class="stat">
+          <h2>400,000</h2>
+          <p>product inquiries daily</p>
+        </div>
+        <div class="stat">
+          <h2>200</h2>
+          <p>countries and regions represented</p>
+        </div>
+      </div>
+    </section>
+    <section class="red-section">
+      <div>
+        <h2>
+          Largest number of products & categories of medical devices on a single
+          place - 1mdm.com
+        </h2>
+        <h4>
+          Connect with buyers worldwide for your product & start selling now.
+        </h4>
+      </div>
+    </section>
+    <!-- Overview / Stats -->
+
+    <div class="responsive-container-block big-container">
+      <div class="responsive-container-block bg">
+        <p class="text-blk title">Success stories from 1mdm.com sellers</p>
+
+        <div class="responsive-container-block blocks">
+          <div
+            class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content"
+          >
+            <p class="text-blk info-block">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
+              elementum magna ut duis pulvinar tincidunt vivamus adipiscing
+              quam. Eget dui quis etiam sed eget sed est.
+            </p>
+            <div class="responsive-container-block person">
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+              >
+                <img
+                  class="profile-img"
+                  src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/eourInstructors1.svg"
+                />
+              </div>
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+              >
+                <p class="text-blk name">Jane Doe</p>
+                <p class="text-blk desig">CEO</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content"
+          >
+            <p class="text-blk info-block">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
+              elementum magna ut duis pulvinar tincidunt vivamus adipiscing
+              quam. Eget dui quis etiam sed eget sed est.
+            </p>
+            <div class="responsive-container-block person">
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+              >
+                <img
+                  class="profile-img"
+                  src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/eourInstructors1.svg"
+                />
+              </div>
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+              >
+                <p class="text-blk name">Jane Doe</p>
+                <p class="text-blk desig">CEO</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content bottom"
+          >
+            <p class="text-blk info-block">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
+              elementum magna ut duis pulvinar tincidunt vivamus adipiscing
+              quam. Eget dui quis etiam sed eget sed est.
+            </p>
+            <div class="responsive-container-block person">
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+              >
+                <img
+                  class="profile-img"
+                  src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/eourInstructors1.svg"
+                />
+              </div>
+              <div
+                class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+              >
+                <p class="text-blk name">Jane Doe</p>
+                <p class="text-blk desig">CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-btns">
+      <a href="#" class="btn red-btn"> <span>🛒</span> Start Selling </a>
+      <a href="#" class="btn red-outline-btn">
+        <span>🎧</span> Customer Service
+      </a>
+    </div>
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col logo-col">
+          <p>One Medical Devices<br />Market Place</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="#">Sell on 1MDM</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Press Room</h3>
+          <ul>
+            <li><a href="#">Images & B-roll</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Policies</h3>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Delivery Information</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Reach Us</h3>
+          <ul>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 1MDM ⚡ by SuperLabs</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
